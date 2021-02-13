@@ -1,10 +1,9 @@
 from setuptools import setup, find_packages
-from prettympl import __version__
 
 
 setup(
     name="prettympl",
-    version=__version__,
+    version="0.0.1",
     packages=find_packages(),
     author="Minjoon Hong",
     author_email="mjhong0708@naver.com",
