@@ -5,7 +5,7 @@ from prettympl import __version__
 setup(
     name="prettympl",
     version=__version__,
-    packages=find_packages,
+    packages=find_packages(),
     author="Minjoon Hong",
     author_email="mjhong0708@naver.com",
     description="Prettier mpl plot",
