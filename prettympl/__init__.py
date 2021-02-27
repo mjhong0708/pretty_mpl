@@ -15,7 +15,7 @@ def set_style(style="simple_white", **kwargs):
 
 
 _available_fonts = []
-for font_path in glob(f"{_font_dir_root}/*/*"):
+for font_path in glob(f"{_font_dir_root}/*/*.*tf"):
     font = fm.get_font(font_path)
     _available_fonts.append(font.family_name)
     fm.fontManager.addfont(font_path)

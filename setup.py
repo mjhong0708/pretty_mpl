@@ -5,6 +5,7 @@ setup(
     name="prettympl",
     version="0.0.1",
     packages=find_packages(),
+    include_package_data=True,
     author="Minjoon Hong",
     author_email="mjhong0708@naver.com",
     description="Prettier mpl plot",
