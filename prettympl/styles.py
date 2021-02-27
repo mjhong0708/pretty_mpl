@@ -36,7 +36,7 @@ def simple_white(
     # Axes properties
     mpl.rcParams['axes.linewidth'] = axes_lw
     mpl.rcParams['axes.labelsize'] = fontsize * 1.2
-    mpl.rcParams['axes.titlesize'] = fontsize * 1.3
+    mpl.rcParams['axes.titlesize'] = fontsize * 1.2
 
     # Ticks properties
     class MyLocator(matplotlib.ticker.AutoMinorLocator):
