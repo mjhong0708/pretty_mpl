@@ -3,7 +3,7 @@
 A simple package for prettier matplotlib plot
 
 ## Features
-- 별도의 설치 없이 리눅스에서도 사용 가능한 다양한 폰트 내 (Arial, Lato, Times new roman 등)
+- 별도의 설치 없이 리눅스에서도 사용 가능한 다양한 폰트 내장
 - `set_style` 함수를 통한 플롯 스타일 설정
 
 
@@ -20,7 +20,7 @@ A simple package for prettier matplotlib plot
 함수에 대한 설명은 `help(set_style)`로 확인 가능함.
 ```python3
 import matplotlib.pyplot as plt
-from prettympl import set_style
+from prettympl import SimpleWhite
 import numpy as np
 
 x1 = np.linspace(0, np.pi / 2, 200)
@@ -30,18 +30,18 @@ y2 = np.sin(x1)
 y3 = np.random.uniform(-1,1,30)
 y4 = np.random.uniform(-1,1,30)
 
-set_style(style='simple_white') # Style 작성
-plt.figure()
-plt.title("title")
-plt.xlabel("xlabel")
-plt.ylabel("ylabel")
-plt.plot(x1, y1, label='cos')
-plt.plot(x1, y2, label='sin')
-plt.plot(x2, y3, 'o', label='scatter1')
-plt.plot(x2, y4, 's', mfc='none', label='scatter2')
-plt.ylim(-1.5, 1.5)
-plt.legend(edgecolor='none')
-plt.tight_layout()   # 반드시 이 함수를 사용할 것을 권장.
+with SimpleWhite(): # Style 작성
+    plt.figure()
+    plt.title("title")
+    plt.xlabel("xlabel")
+    plt.ylabel("ylabel")
+    plt.plot(x1, y1, label='cos')
+    plt.plot(x1, y2, label='sin')
+    plt.plot(x2, y3, 'o', label='scatter1')
+    plt.plot(x2, y4, 's', mfc='none', label='scatter2')
+    plt.ylim(-1.5, 1.5)
+    plt.legend(edgecolor='none')
+
 plt.savefig("prettympl.jpg", dpi=600)
 plt.show()
 ```
