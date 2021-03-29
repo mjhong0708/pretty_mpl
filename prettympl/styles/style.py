@@ -61,7 +61,7 @@ class Style:
         for ax in fig.axes:
             handles, _ = mlegend._get_legend_handles_labels([ax])
             if len(handles) != 0:
-                legend = ax.legend()
+                legend = ax.get_legend()
                 frame = legend.get_frame()
                 frame.set_linewidth(self.legend_linewidth)
         plt.rcdefaults()
