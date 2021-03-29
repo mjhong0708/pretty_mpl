@@ -1,5 +1,6 @@
 from typing import Tuple
 import matplotlib.pyplot as plt
+import matplotlib.legend as mlegend
 
 
 def figsize_cm(figsize: tuple) -> tuple:
@@ -58,8 +59,10 @@ class Style:
     def __exit__(self, exc_type, exc_val, exc_tb):
         fig = plt.gcf()
         for ax in fig.axes:
-            legend = ax.legend()
-            frame = legend.get_frame()
-            frame.set_linewidth(self.legend_linewidth)
+            handles, _ = mlegend._get_legend_handles_labels([ax])
+            if len(handles) != 0:
+                legend = ax.legend()
+                frame = legend.get_frame()
+                frame.set_linewidth(self.legend_linewidth)
         plt.rcdefaults()
         plt.tight_layout()
